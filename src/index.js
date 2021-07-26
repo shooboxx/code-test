@@ -10,22 +10,22 @@ app.post( "/", addVehicle);
 
 // start the Express server
 app.listen( PORT, () => {
-    console.log( `server started at http://localhost:${ port }` );
+    console.log( `server started at http://localhost:${ PORT }` );
 } );
 
 
 
-// Testing database
-var MongoClient = require('mongodb').MongoClient
+// // Testing database
+// var MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect('mongodb://localhost:27017/animals', function (err, client) {
-  if (err) throw err
+// MongoClient.connect('mongodb://localhost:27017/animals', function (err, client) {
+//   if (err) throw err
 
-  var db = client.db('animals')
+//   var db = client.db('animals')
 
-  db.collection('mammals').find().toArray(function (err, result) {
-    if (err) throw err
+//   db.collection('mammals').find().toArray(function (err, result) {
+//     if (err) throw err
 
-    console.log(result)
-  })
-})
+//     console.log(result)
+//   })
+// })
