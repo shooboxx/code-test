@@ -1,15 +1,16 @@
-getVehicle = (req, res) => {
-    res.send(vehicleRepo)
+getVehicle = (req, res) => { 
+    res.render('index', {vehicleRepo})
 }
 addVehicle = (req, res) => {
-    const vehicles = []
-    
-    for (let i = 0; i < req.body.length; i++) {  
-        const newVehicle = {"type": req.body[i].type, "milage": req.body[i].milage, "hybrid": req.body[i].hybrid};
-        vehicleRepo.push(newVehicle)
-        vehicles.push(newVehicle)
+    const {vtype, vmilage, vhybrid} = req.body
+    const newVehicle = {
+        "type": vtype,
+        "milage": parseInt(vmilage) || 0,
+        "hybrid": vhybrid === 'Yes'
     }
-    res.send(vehicles)
+    console.log(newVehicle);
+    vehicleRepo.push(newVehicle);
+
 }
 
 module.exports = { getVehicle, addVehicle } 
@@ -36,8 +37,31 @@ let vehicleRepo = [
         "hybrid": false
     },
     {
-        "type": "Car",
+        "type": "Test",
         "milage": 58000,
         "hybrid": false
     }
 ]
+
+
+
+// let vehicleType = document.querySelector('.vtype');
+// let vehicleMilage = document.querySelector('.vmilage');
+// let vehicleHybrid = document.querySelector('#vhybrid').value;
+// const vehicleButton = document.querySelector('#addVehicleBtn');
+
+
+
+// const addToVehicle = (e) => {
+//     e.preventDefault();
+//     console.log(vehicleType.value, vehicleMilage.value, vehicleHybrid);
+    
+    
+//     getToVehicle();
+// };
+
+// getToVehicle = () => {
+//     console.log('from the backend')
+// };
+// // getVehicle();
+// vehicleButton.addEventListener("click", addToVehicle);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Code test</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="vehicle-list">
+        <div class="add-vehicle">
+            <h3 class="heading-3">Add a vehicle</h3>
+            <div class="form">
+                <form action="">
+                    <div class="input-form">
+                        <label for="vtype">Type</label>
+                        <br>
+                        <input type="text" name="vtype" id="vtype" class='vtype'>
+                    </div>
+                    <div class="input-form">
+                        <label for="vmilage">Milage</label>
+                        <br>
+                        <input type="text" name="vmilage" id="vmilage" class='vmilage'>
+                    </div>
+                    <div class="input-form">
+                        <label for="vhybrid">Hybid?</label> <br>
+                        <select name="vhybrid" id="vhybrid">
+                            <option [ngValue]="true">Yes</option>
+                            <option [ngValue]="false">No</option>
+                        </select>
+                    </div> 
+                    <button id="addVehicleBtn">Click me</button>
+                </form>
+            </div>
+        </div>
+        
+
+        <table>
+            <tr>
+                <th>Vehicle Type</th>
+                <th>Milage</th>
+                <th>Hybrid</th>
+            </tr>
+            <tr>
+                <td>Car</td>
+                <td>3000</td>
+                <td>TRUE</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
